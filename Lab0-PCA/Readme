@@ -1,1 +1,56 @@
+Lab 0: EOF Analysis of Global SST Patterns
+EAS 4860/6860
+Due: Friday Jan 31, 2025
 
+Abstract
+This lab develops understanding of Empirical Orthogonal Function (EOF) analysis through application to global climate data. Students will: (1) preprocess multidimensional climate data for EOF analysis, (2) compute and visualize leading modes of variability, and (3) interpret results in the context of known climate phenomena. Students should use SST or Tropical SST from datasets of their choosing, though additional variables could be included as warranted.
+
+Introduction
+EOF analysis, also known as Principal Component Analysis (PCA), is a powerful technique for identifying dominant patterns in climate data. The method decomposes spatiotemporal data into orthogonal modes of variability:
+
+X(t,s) = Σ[PCk(t)EOFk(s)]
+Methods
+Data Preprocessing
+Remove seasonal cycle
+Apply latitude weighting: W(s) = √cos(φ)
+Handle missing values
+Format data matrix
+EOF Computation
+Compute covariance matrix
+Solve eigenvalue problem
+Calculate explained variance
+Data
+Choose one primary dataset:
+
+ERSST v5
+HadISST
+OISST
+Required Analysis
+Produce maps of first 3 EOF patterns
+Plot associated PC time series
+Create scree plot showing explained variance
+Test statistical significance
+Compare patterns to known climate modes
+Suggested Packages
+import xarray as xr
+import numpy as np
+import matplotlib.pyplot as plt
+import cartopy.crs as ccrs
+from eofs.xarray import Solver
+        
+Grading Criteria
+Scientific writing (25%)
+Analysis quality (25%)
+Figure quality (25%)
+Code documentation (25%)
+Expected Figures
+Mean state map
+EOF patterns 1-3 including:
+Proper projection
+Clear colorbar
+Significance contours
+Variance explained
+PC time series
+Scree plot
+References
+[Include relevant citations]
